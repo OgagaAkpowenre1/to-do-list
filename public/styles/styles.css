@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+
+body {
+    font-family: 'Parkinsans', sans-serif;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom,#8571C8, #9448BC);
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rebeccapurple;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
