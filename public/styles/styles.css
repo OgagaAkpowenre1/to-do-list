@@ -5,15 +5,94 @@ body {
     font-family: 'Parkinsans', sans-serif;
     text-align: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     background: linear-gradient(to bottom,#8571C8, #9448BC);
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 0;
 }
 
+button {
+    cursor: pointer;
+}
 
-.task {
+.title {
+    font-size: 4rem;
+    color: #90FCF9;
+}
+
+.task-title-input {
+    width: 23rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+}
+
+.task-deadline-input {
+    height: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.add-btn {
+    height: 2.5rem;
+    width: 5rem;
+    /* border-radius: 0.5rem; */
+}
+
+.task-section {
+    display: flex;
+    flex: 1;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+th, td {
+    border: 1px solid rebeccapurple;
+    color: #fff;
+    font-weight: 400;
+}
+
+th {
+    background-color: #8571C8; /* Adds background for headers */
+    color: white; /* White text for headers */
+    font-weight: bold;
+}
+
+td {
+    padding: 1rem 3rem;
+}
+
+td button {
+    background-color: #9448BC;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+td button:hover {
+    background-color: #7341A2; /* Adds a hover effect for buttons */
+}
+
+/* .task {
     display: flex;
     justify-content: space-between;
     border: 1px solid rebeccapurple;
@@ -21,4 +100,4 @@ body {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-}
+} */
