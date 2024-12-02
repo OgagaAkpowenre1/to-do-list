@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 let tasks = [
-  { title: "Finish express to-do list", deadline: "A long time ago", checked: true },
+  { title: "Finish Express to-do list", deadline: "A long time ago", checked: true },
 ];
 
 const absolutePath = __dirname + "/public/index.html";
