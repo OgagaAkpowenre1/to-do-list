@@ -9,7 +9,7 @@
 <body>
     <h1 class="title">Express To-Do List</h1>
     <section class="form-section">
-        <form action="">
+        <form action="" id="task-input-form">
             <input type="text" class="task-title-input" placeholder="Enter a task">
             <input type="date" name="" id="" class="task-deadline-input">
             <button class="add-btn">Add Task</button>
@@ -26,6 +26,7 @@
                 </tr>
             </thead>
 
+           <tbody>
             <tr>
                 <td>Task 1</td>
                 <td>Tomorrow</td>
@@ -109,7 +110,10 @@
                 <td><input type="checkbox" name="" id=""></td>
                 <td><button>Delete</button></td>
             </tr>
+           </tbody>
         </table>
     </section>
+
+    <script src="/public/js/script.js"></script>
 </body>
 </html>
