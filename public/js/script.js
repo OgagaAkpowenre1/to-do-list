@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchTasks() {
     const res = await fetch("/tasks");
     const tasks = await res.json();
-    console.log(tasks);
-
+    console.log(tasks)
     taskBody.innerHTML = "";
     tasks.forEach((task) => {
       const row = document.createElement("tr");
@@ -16,19 +15,25 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${task.title}</td>
             <td>${task.deadline}</td>
             <td><input type="checkbox" ${task.checked ? "checked" : ""} ></td>
-            <td><button onclick="deleteTask(${task.title})">Delete</button></td>
+            <td><button onclick="deleteTask('${encodeURIComponent(task.title)}')">Delete</button></td>
             `;
       taskBody.appendChild(row);
     });
   }
 
-  function addTasks() {}
-
   taskInputForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const taskTitle = taskTitleInput.value.trim()
+    const deadline = taskDeadline.value.trim()
+
+    if(!taskTitle){
+        alert('Task cannot be empty!')
+        return
+    }
+
     const task = {
-      title: taskTitleInput.value,
-      deadline: taskDeadline.value,
+      title: taskTitle,
+      deadline: deadline,
       checked: false,
     };
 
@@ -41,6 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
     taskDeadline.value = "";
     fetchTasks();
   });
+
+  window.deleteTask = async(taskTitle) => {
+    console.log("clicked")
+    await fetch(`/tasks/${encodeURIComponent(taskTitle)}`, {method: 'DELETE'})
+    console.log("done")
+    fetchTasks()  
+  }
 
   fetchTasks();
 });
