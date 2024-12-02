@@ -4,12 +4,6 @@ const app = express();
 let tasks = [
   { title: "Finish express site", deadline: "today", checked: false },
   { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
-  { title: "Finish express site", deadline: "today", checked: false },
 ];
 
 const absolutePath = __dirname + "/public/index.html";
@@ -24,6 +18,11 @@ app.use(express.json())
 app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
+
+app.post('/tasks', (req, res) => {
+    tasks.push(req.body)
+    res.status(201).json({ success: true });
+})
 
 app.listen(3000, () => {
   console.log("Listening on port 3000!");
